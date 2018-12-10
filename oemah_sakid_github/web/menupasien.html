@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>oemah sakid</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/full-slider.css" rel="stylesheet">
+
+
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height:70%;
+                width: 80%;
+                margin-left: 5%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .button {
+                display: inline-block;
+                border-radius: 6px;
+                background-color: #1EE849;
+                border: none;
+                color: black;
+                text-align: center;
+                font-size: 28px;
+                padding: 8px;
+                width: 175px;
+                transition: all 0.5s;
+                cursor: pointer;
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover {
+                background-color: #1EE849;
+                color: black;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            .button:hover span {
+                padding-right: 25px;
+            }
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                padding-top: 20px;
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5px auto; /* 15% from the top and centered */
+                border: 1px solid #888;
+                width: 20%; /* Could be more or less, depending on screen size */
+            }
+
+
+            /* Add Zoom Animation */
+            .animate {
+                -webkit-animation: animatezoom 0.6s;
+                animation: animatezoom 0.6s
+            }
+            .cancelbtn {
+                width: 8%;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                background-color: #d32f2f; 
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+            @-webkit-keyframes animatezoom {
+                from {-webkit-transform: scale(0)} 
+                to {-webkit-transform: scale(1)}
+            }
+
+            @keyframes animatezoom {
+                from {transform: scale(0)} 
+                to {transform: scale(1)}
+            }
+        </style>
+    </head>
+
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li>
+                            <a href="bacapasien.html"><font size="4">Daftar Pasien</font></a>
+                        </li>
+                        <li>
+                            <a href="cobacobatambahpasien.html"><font size="4">Tambah pasien</font></a>
+                        </li>
+                        <li>
+                            <a href="bacaantrian.html"><font size="4">Antrian Pasien</font></a>
+                        </li>
+                        <li>
+                            <a href="tambahantri.html"><font size="4"> Daftar Antrian Pasien</font></a>
+                        </li>
+                        <li>
+                            <a href="index.html"><font size="4">logout</font></a>
+                        </li>
+                        
+                        
+
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+
+        <!-- Full Page Image Background Carousel Header -->
+        <header id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+          
+            </ol>
+
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <!-- Set the first background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('bb.jpg');"></div>
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+
+            <!-- Script to Activate the Carousel -->
+            <script>
+                                  $('.carousel').carousel({
+                                      interval: 3000 //changes the speed
+                                  })
+            </script>
+            
+
+            <meta name="viewport" content="initial-scale=1.0">
+            <meta charset="utf-8">
+            <style>
+                /* Always set the map height explicitly to define the size of the div
+                 * element that contains the map. */
+                #map {
+                    height: 80%;
+                    width: 80%;
+                    margin-left: 10%;
+                    margin-bottom: 3%;
+                }
+                /* Optional: Makes the sample page fill the window. */
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+            </style>
+
+          
+
+
+          
+
+
+            <!-- Footer Text -->
+            <div class="container-fluid text-center text-md-left" style=" background-color: #A4AAAF">
+
+                <!-- Grid row -->
+                <div class="row" style=" background-color: #A4AAAF">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style=" background-color: #A4AAAF">
+
+
+                        <!-- Content -->
+                        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae harum esse fugiat. Itaque, culpa?</p>
+
+                    </div>
+                    <!-- Grid column -->
+
+
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3" style=" background-color: #A4AAAF">
+
+                        <!-- Content -->
+                        <h5 class="text-uppercase font-weight-bold" style=" background-color: #A4AAAF">Footer text 2</h5>
+                        <p style=" background-color: #A4AAAF">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Text -->
+
+                <!-- Copyright --><br/><br/><br/><br/><br/>
+                <div class="footer-copyright text-center py-3">© 2018 Copyright:
+
+                    ME
+                </div>
+                <!-- Copyright -->
+
+                </footer>
+                <!-- Footer -->
+
+                </body>
+
+                </html>
